@@ -60,6 +60,7 @@ namespace CambiosApp
                     "e não foram préviamente carregadas as taxas." + Environment.NewLine +
                     "Tente mais tarde";
 
+
                 labelStatus.Text = "A primeira inicialização devera ter ligação a Internet";
 
                 return;
