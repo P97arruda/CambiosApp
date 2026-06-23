@@ -7,17 +7,19 @@ namespace CambiosApp.Sevicos
 
     internal class NetworkService
     {
+        //Primeiro Erro
+
         public Response CheckConnection()
         {
-            var client = new WebClient();
+            var client = new HttpClient();
 
             try
             {
-                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                var response = client.GetAsync("http://clients3.google.com/generate_204").Result;
                 {
                     return new Response
                     {
-                        IsSucces = true,
+                        IsSucces = response.IsSuccessStatusCode
                     };
                 }
             }
